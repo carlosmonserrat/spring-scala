@@ -1,5 +1,7 @@
 A simple setup for getting a response when GET request /test
-The same uses scala 2.13.1
+
+
+Project supporting scala 2.13.1
 
 **Notes**
 - Its fine to run revolver with this project, this still provides the benefits of hot reload
