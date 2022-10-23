@@ -1,4 +1,4 @@
-package com.dummy.springboot
+package com.dummy
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
