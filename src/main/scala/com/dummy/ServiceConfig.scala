@@ -15,9 +15,5 @@ case class ServiceConfig() extends WebMvcConfigurer{
   @BeanProperty
   var someKey: String = _
 
-  @Bean
-  def sample(): View = {
-    new JstlView("/views/index.html")
-  }
 }
 

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
-import org.springframework.web.bind.annotation.{RequestMapping, RequestMethod, ResponseBody}
+import org.springframework.web.bind.annotation.{RequestAttribute, RequestBody, RequestMapping, RequestMethod, RequestParam, ResponseBody}
 
 @Controller
 class ServiceController @Autowired()(myService: SomeService) {
@@ -17,11 +17,12 @@ class ServiceController @Autowired()(myService: SomeService) {
   @RequestMapping(path = Array("/"), method = Array(RequestMethod.GET))
   def handleRoot(model: Model): String = {
     model.addAttribute("name", "ANAME!")
-    "another"
+    "index"
   }
 
-  @RequestMapping(path = Array("/sample"), method = Array(RequestMethod.GET), produces = Array(MediaType.TEXT_HTML_VALUE))
-  def handleSample(): String = {
-    "sample"
+  @RequestMapping(path = Array("/hey"), method = Array(RequestMethod.POST))
+  @ResponseBody
+  def handleSample(@RequestParam("name")  response:String): String = {
+    "response: "+response
   }
 }
